@@ -43,14 +43,16 @@ export default function HomePage() {
 
         <Text style={styles.sectionTitle}>Quick Access</Text>
         <View style={styles.grid}>
-          {[
-            { icon: "calendar", label: "Calendar" },
-            { icon: "stats-chart", label: "Grades" },
-            { icon: "flame", label: "Habits" },
-            { icon: "book", label: "Study Tools" },
-            { icon: "timer", label: "Pomodoro" },
-            { icon: "school", label: "Courses" },
-          ].map(({ icon, label }, idx) => (
+          {(
+            [
+              { icon: "calendar", label: "Calendar" },
+              { icon: "stats-chart", label: "Grades" },
+              { icon: "flame", label: "Habits" },
+              { icon: "book", label: "Study Tools" },
+              { icon: "timer", label: "Pomodoro" },
+              { icon: "school", label: "Courses" },
+            ] as const
+          ).map(({ icon, label }, idx) => (
             <Pressable
               key={idx}
               style={({ pressed }) => [styles.card, pressed && styles.pressed]}
